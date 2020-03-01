@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/contentMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="@dimen/card.padding"
+        android:paddingBottom="@dimen/card.padding">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_photo"
+            android:layout_width="100dp"
+            android:layout_height="56dp"
+            android:src="@drawable/default_image"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:layout_marginLeft="@dimen/main.paddin.small"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/img_photo"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
