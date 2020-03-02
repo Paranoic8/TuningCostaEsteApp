@@ -1,15 +1,13 @@
 package com.example.tuningcostaesteapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,32 +21,34 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.ViewHolder> {
+public class DisenoAdapter extends RecyclerView.Adapter<DisenoAdapter.ViewHolder> {
 
 
-    private List<Servicio> servicios;
+
+    private List<Diseno> disenos;
     private Context context;
     private OnItemClickListener listener;
 
-    public ServicioAdapter(List<Servicio> servicios, Context context) {
-        this.servicios = servicios;
+    public DisenoAdapter(List<Diseno> disenos, Context context) {
+        this.disenos = disenos;
         this.context = context;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_servicios, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_diseno, parent, false);
         this.context = parent.getContext();
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final Servicio servicio = servicios.get(position);
+        final Diseno diseno = disenos.get(position);
 
-        holder.tvNombreServicio.setText(servicio.getNombre());
+        holder.tvNombreDiseno.setText(diseno.getNombre());
+        holder.tvDescripcionDiseno.setText(diseno.getDescripcion());
 
-        if (String.valueOf(servicio.getFotoURL()) != null) {
+        if (String.valueOf(diseno.getFotoURL()) != null) {
 
             /**
              *
@@ -58,14 +58,14 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.ViewHo
             options.centerCrop();
             options.placeholder(R.drawable.default_image);//mostrar mientras la imagen carga
 
-            Glide.with(context).load(servicio.getFotoURL()).apply(options).into(holder.imgPhotoServicio);
+            Glide.with(context).load(diseno.getFotoURL()).apply(options).into(holder.imgPhotoDiseno);
 
         } else {
-            holder.imgPhotoServicio.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.default_image));
+            holder.imgPhotoDiseno.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.default_image));
         }
 
 
-        holder.contentMainServicio.setOnClickListener(new View.OnClickListener() {
+        holder.contentMainDiseno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Snackbar.make(v, "Item Click", Snackbar.LENGTH_SHORT)
@@ -77,12 +77,12 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return this.servicios.size();
+        return this.disenos.size();
     }
 
-    public void add(Servicio servicio) {
-        if (servicios.contains(servicio)) {
-            servicios.add(servicio);
+    public void add(Diseno diseno) {
+        if (disenos.contains(diseno)) {
+            disenos.add(diseno);
             notifyDataSetChanged();
         }
 
@@ -90,12 +90,15 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.ViewHo
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.img_photoServicio)
-        AppCompatImageView imgPhotoServicio;
-        @BindView(R.id.tv_nombreServicio)
-        AppCompatTextView tvNombreServicio;
-        @BindView(R.id.contentMainServicio)
-        RelativeLayout contentMainServicio;
+        @BindView(R.id.img_photoDiseno)
+        AppCompatImageView imgPhotoDiseno;
+        @BindView(R.id.tv_nombreDiseno)
+        TextView tvNombreDiseno;
+        @BindView(R.id.tv_descripcionDiseno)
+        TextView tvDescripcionDiseno;
+        @BindView(R.id.contentMainDiseno)
+        RelativeLayout contentMainDiseno;
+
 
         ViewHolder(View itemView) {
             super(itemView);

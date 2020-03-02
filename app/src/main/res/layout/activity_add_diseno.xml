@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".AddServicioActivity">
+    tools:context=".AddDisenoActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -24,7 +24,7 @@
             app:toolbarId="@+id/toolbar">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_foto"
+                android:id="@+id/img_fotoDiseno"
                 android:layout_width="match_parent"
                 android:src="@drawable/default_image"
                 android:scaleType="centerCrop"
@@ -41,7 +41,7 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_add_servicio2" />
+    <include layout="@layout/content_add_diseno" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

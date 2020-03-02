@@ -13,6 +13,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ListDisenoActivity"
+            android:label="@string/title_activity_list_diseno"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.tuningcostaesteapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AddDisenoActivity"
+            android:label="@string/title_activity_add_diseno"
+            android:parentActivityName=".DisenoActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.tuningcostaesteapp.DisenoActivity" />
+        </activity>
+        <activity
+            android:name=".DisenoActivity"
+            android:label="@string/title_activity_diseno_main2"
+            android:parentActivityName=".MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.tuningcostaesteapp.MenuActivity" />
+        </activity>
+        <activity
             android:name=".AddServicioActivity"
             android:label="@string/title_activity_add_servicio"
             android:parentActivityName=".ServiciosActivity"
@@ -31,15 +58,6 @@
                 android:value="com.example.tuningcostaesteapp.MenuActivity" />
         </activity>
         <activity
-            android:name=".DisenosActivity"
-            android:label="@string/title_activity_disenos"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.tuningcostaesteapp.MainActivity" />
-        </activity>
-        <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar">
@@ -50,16 +68,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetalleActivity"
-            android:label="@string/title_activity_detalle"
-            android:parentActivityName=".DisenosActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.tuningcostaesteapp.DisenosActivity" />
-
-        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:parentActivityName=".MenuActivity"
@@ -67,6 +75,17 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.tuningcostaesteapp.MenuActivity" />
+        </activity>
+
+
+        <activity
+            android:name=".DetalleActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".ListDisenoActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.tuningcostaesteapp.ListDisenoActivity" />
         </activity>
     </application>
 

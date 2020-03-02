@@ -25,24 +25,15 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_nombreServicio"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre"
             android:layout_marginLeft="@dimen/main.paddin.small"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/btn_edit"
             android:layout_toEndOf="@id/img_photoServicio"/>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btn_edit"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/edit"
-            android:tint="@color/yellow"
-            android:layout_marginRight="16dp"
-            android:layout_width="24dp"
-            android:layout_height="24dp"/>
+
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

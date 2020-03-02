@@ -10,21 +10,17 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 
-public class AddServicioActivity extends AppCompatActivity {
+public class AddDisenoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_servicio2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_add_diseno);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setTitle("Nuevo");
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +28,7 @@ public class AddServicioActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
 }

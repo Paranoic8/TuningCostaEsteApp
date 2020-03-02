@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,6 +16,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -55,20 +55,27 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            int id = item.getItemId();
+        int id = item.getItemId();
 
-            if (id == R.id.action_inicio) {
-                // Handle the camera action
-            } else if (id == R.id.action_servicios) {
-                Intent intent=new Intent(MenuActivity.this,ServiciosActivity.class);
-                startActivity(intent);
-            } else if (id == R.id.action_disenos) {
+        if (id == R.id.action_inicio) {
+            // Handle the camera action
+        } else if (id == R.id.action_servicios) {
+            Intent intent = new Intent(MenuActivity.this, ServiciosActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.action_disenos) {
+            Intent intent = new Intent(MenuActivity.this, DisenoActivity.class);
+            startActivity(intent);
 
-            }
-
-            drawerLayout.closeDrawer(GravityCompat.START);
-            return true;
         }
 
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
 
+
+    @OnClick(R.id.card_combi)
+    public void onViewClicked() {
+        Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 }

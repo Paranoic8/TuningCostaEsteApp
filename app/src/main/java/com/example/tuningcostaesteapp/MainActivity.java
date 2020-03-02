@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
      * **********/
     @Override
     public void onItemClick(SubCategoria subCategoria) {
-        Intent intent=new Intent(MainActivity.this,DisenosActivity.class);
+        Intent intent=new Intent(MainActivity.this,ListDisenoActivity.class);
         startActivity(intent);
 
     }

@@ -116,4 +116,7 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="title_activity_diseno_main2">DisenoMain2Activity</string>
+    <string name="title_activity_add_diseno">AddDisenoActivity</string>
+    <string name="title_activity_list_diseno">ListDisenoActivity</string>
 </resources>
